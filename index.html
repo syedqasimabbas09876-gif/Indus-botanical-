@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indus Botanical | 100% Pure & Organic</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root {
+--primary-green: #2d5a27;
+--light-bg: #f4f7f4;
+}
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: var(--light-bg); color: #333; }
+
+/* Hero Section */
+.hero {
+height: 80vh;
+background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80');
+background-size: cover;
+background-position: center;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: white;
+}
+.hero h1 { font-size: 4rem; text-transform: uppercase; letter-spacing: 5px; }
+
+/* Floating Icons */
+.sticky-controls {
+position: fixed;
+right: 20px;
+bottom: 20px;
+display: flex;
+flex-direction: column;
+gap: 15px;
+z-index: 1000;
+}
+.icon-btn {
+width: 60px; height: 60px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+color: white; font-size: 24px; text-decoration: none;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+transition: transform 0.3s;
+}
+.icon-btn:hover { transform: scale(1.1); }
+.insta { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
+.whatsapp { background: #25D366; }
+.ai-agent { background: var(--primary-green); }
+
+/* Product Section */
+.products { padding: 50px 10%; text-align: center; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.product-card { background: white; padding: 20px; border-radius: 10px; border: 1px solid #ddd; }
+.product-card img { width: 100%; border-radius: 5px; }
+.product-label { color: var(--primary-green); font-weight: bold; font-size: 1.5rem; margin-top: 10px; }
+.badge { background: #ffd700; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; font-weight: bold; }
+
+/* Form Section */
+.form-container { background: white; padding: 40px; margin: 50px 10%; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+.form-group { margin-bottom: 15px; }
+input, select { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+.submit-btn { background: var(--primary-green); color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; width: 100%; font-size: 1rem; }
+
+/* Footer */
+footer { background: #222; color: white; padding: 40px 10%; text-align: center; }
+
+@media (max-width: 768px) {
+.hero h1 { font-size: 2.5rem; }
+.form-container { margin: 20px 5%; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div>
+<h1>Indus Botanical</h1>
+<p>100% Pure, Organic & Lab Tested</p>
+</div>
+</section>
+
+<section class="products">
+<div class="product-grid">
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1611073113567-28d1ec2ce38b?auto=format&fit=crop&w=400&q=80" alt="Neem Powder">
+<div class="badge">LOGO HERE</div>
+<div class="product-label">NEEM POWDER</div>
+<p>100% Pure Organic & Lab Tested</p>
+</div>
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1540348563548-6485e9667741?auto=format&fit=crop&w=400&q=80" alt="Bulk Oil">
+<div class="badge">LOGO HERE</div>
+<div class="product-label" style="color: brown;">BULK OIL CONTAINER</div>
+<p>100% Pure Organic & Lab Tested</p>
+</div>
+</div>
+</section>
+
+<section class="form-container">
+<h2>Inquiry & Sample Request</h2>
+<p><i>Policy: Samples are 100% free; customer only pays shipment/delivery charges. Samples are non-returnable.</i></p>
+<form>
+<div class="form-group"><input type="text" placeholder="First Name" required></div>
+<div class="form-group"><input type="text" placeholder="Last Name" required></div>
+<div class="form-group"><input type="email" placeholder="Email Address" required></div>
+<div class="form-group"><input type="text" placeholder="Company / Store Name"></div>
+<div class="form-group"><input type="tel" placeholder="Phone Number" required></div>
+<div class="form-group"><input type="text" placeholder="State/Province" required></div>
+<div class="form-group"><input type="text" placeholder="Full Address" required></div>
+<div class="form-group">
+<label><input type="checkbox" required> I confirm that I agree to pay the shipment costs for the free sample.</label>
+</div>
+<button class="submit-btn">Submit Request</button>
+</form>
+</section>
+
+<div class="sticky-controls">
+<a href="https://instagram.com/Indus_botanical" class="icon-btn insta" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/923299718034" class="icon-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="#" class="icon-btn ai-agent" onclick="alert('AI Agent: How can I help you today?')"><i class="fas fa-robot"></i></a>
+</div>
+
+<footer>
+<p>Contact Us: 03299718034</p>
+<p>Email: indusbotanical.global@gmail.com</p>
+<p>&copy; 2026 Indus Botanical. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
