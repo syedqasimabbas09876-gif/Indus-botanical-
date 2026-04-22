@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indus Botanical | Premium Organic Export</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root { --primary: #2d5a27; --gold: #c5a059; --text: #333; --light: #f9fbf9; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #fff; scroll-behavior: smooth; color: var(--text); }
+
+/* Navigation */
+.top-nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+.nav-links { display: flex; align-items: center; gap: 20px; }
+.nav-links a { text-decoration: none; color: #444; font-weight: bold; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* Hero - Chota kar diya taakay products foran nazar aayein */
+.hero { height: 35vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; }
+.hero h1 { font-size: 2.5rem; margin: 0; }
+
+/* Products & Auto Calculator */
+.section-header { text-align: center; margin: 40px 0 20px; }
+.section-header h2 { font-size: 2.5rem; color: var(--primary); }
+.container { padding: 0 5% 60px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 1px solid #eee; position: relative; }
+.card img { width: 100%; height: 220px; object-fit: cover; border-radius: 15px; margin-bottom: 15px; }
+.card h3 { color: var(--primary); margin: 10px 0; font-size: 1.5rem; }
+
+/* Calculator Area Inside Card */
+.calc-box { background: #f4f8f4; padding: 15px; border-radius: 12px; margin: 15px 0; border: 1px solid #e0ebe0; }
+.calc-box input { width: 80px; padding: 10px; border-radius: 8px; border: 1px solid #ccc; text-align: center; font-size: 1rem; font-weight: bold; margin: 5px 0; }
+.total-price { font-size: 1.8rem; font-weight: 900; color: #111; margin-top: 10px; }
+.total-price span { color: var(--primary); }
+
+.buy-btn { display: block; background: var(--primary); color: white; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s; margin-top: 10px; cursor: pointer; border: none; width: 100%; font-size: 1.1rem; }
+.buy-btn:hover { background: #1a3617; }
+
+/* Form Section */
+.form-section { background: var(--light); padding: 60px 5%; border-top: 5px solid var(--primary); }
+.form-container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+input[type="text"], input[type="email"], textarea { width: 100%; padding: 15px; margin: 10px 0; border: 2px solid #eee; border-radius: 10px; box-sizing: border-box; font-size: 1rem; }
+
+/* Payment Methods */
+.payments { display: flex; justify-content: center; gap: 20px; font-size: 2.5rem; margin: 20px 0; color: #555; }
+.payments i:hover { color: var(--primary); }
+
+/* Floating Controls */
+.sticky-controls { position: fixed; right: 25px; bottom: 25px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+.icon-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white !important; font-size: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); text-decoration: none; z-index: 1001; }
+.insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.whatsapp { background: #25D366; }
+.ai-btn { background: #1a1a1a; border: 2px solid var(--primary); }
+
+/* AI Window - Bigger for new buttons */
+#ai-window { display:none; position:fixed; right:25px; bottom:100px; width:340px; background:white; border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,0.3); z-index:2000; overflow:hidden; border: 1px solid var(--primary); }
+.ai-header { background: var(--primary); color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; }
+.ai-chat-body { height: 260px; overflow-y: auto; padding: 15px; background: #fdfdfd; font-size: 0.9rem; line-height: 1.5; }
+.ai-buttons { padding:10px; border-top: 1px solid #eee; display: flex; gap: 5px; flex-wrap: wrap; background: #fff; }
+.ai-buttons button { padding:6px 10px; border-radius:5px; border:1px solid var(--primary); background:white; cursor:pointer; font-size: 0.8rem; font-weight: bold; color: var(--primary); }
+
+/* Footer & Terms */
+footer { background: #111; color: white; padding: 40px 10%; text-align: center; }
+.terms { margin-top: 20px; font-size: 0.85rem; color: #888; }
+.terms a { color: var(--gold); text-decoration: none; margin: 0 10px; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+<div class="logo">INDUS BOTANICAL</div>
+<div class="nav-links">
+<a href="#products">Products</a>
+<a href="#order">Get Quote</a>
+</div>
+</nav>
+
+<header class="hero">
+<h1>Direct Export from Indus</h1>
+</header>
+
+<section class="section-header" id="products">
+<h2>Premium Catalog & Calculator</h2>
+</section>
+
+<div class="container">
+<div class="product-grid">
+
+<div class="card">
+<img src="neem_powder.jpg" alt="Neem Powder">
+<h3>Neem Powder</h3>
+<p>100% Organic, Triple Sifted</p>
+<div class="calc-box">
+<div>Rate: <b>$19.99 / KG</b></div>
+<label>Qty (KG):</label> <input type="number" id="qty-powder" value="1" min="1" oninput="calculate()">
+<div class="total-price">Total: $<span><b id="total-powder">19.99</b></span></div>
+</div>
+<a href="#order" class="buy-btn">Request Quote</a>
+</div>
+
+<div class="card">
+<img src="neem_leaves.jpg" alt="Neem Leaves">
+<h3>Dry Neem Leaves</h3>
+<p>Sun-Dried, Export Quality</p>
+<div class="calc-box">
+<div>Rate: <b>$14.50 / KG</b></div>
+<label>Qty (KG):</label> <input type="number" id="qty-leaves" value="1" min="1" oninput="calculate()">
+<div class="total-price">Total: $<span><b id="total-leaves">14.50</b></span></div>
+</div>
+<a href="#order" class="buy-btn">Request Quote</a>
+</div>
+
+<div class="card" style="border: 2px solid var(--gold);">
+<div style="background:var(--gold); color:white; position:absolute; top:0; left:0; right:0; padding:5px; font-weight:bold; font-size:0.9rem;">BULK DISCOUNT (100KG+)</div>
+<img src="bulk_oil.jpg" alt="Bulk Order" style="margin-top: 25px;">
+<h3>Bulk Neem Powder</h3>
+<p>Commercial Drums / Sacks</p>
+<div class="calc-box">
+<div>Rate: <b>$12.00 / KG</b></div>
+<label>Qty (KG):</label> <input type="number" id="qty-bulk" value="100" min="100" oninput="calculate()">
+<div class="total-price">Total: $<span><b id="total-bulk">1200.00</b></span></div>
+</div>
+<a href="#order" class="buy-btn" style="background: var(--gold); color: #111;">Request Bulk Quote</a>
+</div>
+
+</div>
+</div>
+
+<section class="form-section" id="order">
+<div class="form-container">
+<h2 style="text-align: center; color: var(--primary);">Finalize Your Export Order</h2>
+<p style="text-align: center; color: #666;">Submit your calculated quantity to our team for a final shipping quote.</p>
+
+<form action="https://formspree.io/f/indusbotanical.global@gmail.com" method="POST">
+<input type="text" name="Name" placeholder="Full Name / Company Name" required>
+<input type="email" name="Email" placeholder="Business Email" required>
+<input type="text" name="Country" placeholder="Destination Country (e.g., USA, UK)" required>
+<textarea name="Order Details" placeholder="Paste your calculated total here (e.g., 100KG Bulk Powder = $1200). Include shipping address..." rows="4" required></textarea>
+
+<div style="text-align: center; margin-top: 20px;">
+<b>Accepted International Payments:</b>
+<div class="payments">
+<i class="fab fa-cc-visa" style="color: #1a1f71;" title="Visa"></i>
+<i class="fab fa-cc-mastercard" style="color: #eb001b;" title="Mastercard"></i>
+<i class="fab fa-cc-paypal" style="color: #003087;" title="PayPal"></i>
+<i class="fas fa-university" style="color: #333;" title="Bank Wire Transfer"></i>
+</div>
+</div>
+
+<button type="submit" class="buy-btn" style="padding: 20px; font-size: 1.2rem;">SUBMIT FOR SHIPPING QUOTE</button>
+</form>
+</div>
+</section>
+
+<div class="sticky-controls">
+<a href="https://www.instagram.com/Indus_botanical" class="icon-btn insta" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/923299718034" class="icon-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="javascript:void(0)" class="icon-btn ai-btn" onclick="toggleAI()"><i class="fas fa-robot"></i></a>
+</div>
+
+<div id="ai-window">
+<div class="ai-header">
+<span><i class="fas fa-robot"></i> Indus AI Assistant</span>
+<span onclick="toggleAI()" style="cursor:pointer; font-size:1.2rem;">&times;</span>
+</div>
+<div id="ai-body" class="ai-chat-body">
+Hello! I am ready to answer your questions about Indus Botanical.
+</div>
+<div class="ai-buttons">
+<button onclick="aiAsk('meeting')">Meeting Time?</button>
+<button onclick="aiAsk('why')">Why Choose Us?</button>
+<button onclick="aiButtonUSA()">USA Supply?</button>
+</div>
+</div>
+
+<footer>
+<h2>INDUS BOTANICAL</h2>
+<p>indusbotanical.global@gmail.com | WhatsApp: +92 329 9718034</p>
+
+<div class="terms">
+<a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#">Shipping Terms</a>
+<br><br>
+© 2026 Indus Botanical Global. All Rights Reserved.
+</div>
+</footer>
+
+<script>
+// Auto Calculator Logic
+function calculate() {
+let pQty = document.getElementById('qty-powder').value;
+let lQty = document.getElementById('qty-leaves').value;
+let bQty = document.getElementById('qty-bulk').value;
+
+// Ensure bulk stays above 100
+if(bQty < 100) { document.getElementById('qty-bulk').value = 100; bQty = 100; }
+
+document.getElementById('total-powder').innerText = (pQty * 19.99).toFixed(2);
+document.getElementById('total-leaves').innerText = (lQty * 14.50).toFixed(2);
+document.getElementById('total-bulk').innerText = (bQty * 12.00).toFixed(2);
+}
+
+// AI Logic
+function toggleAI() {
+let win = document.getElementById('ai-window');
+win.style.display = (win.style.display === 'none') ? 'block' : 'none';
+}
+
+function aiAsk(type) {
+let body = document.getElementById('ai-body');
+let qText = "";
+
+if(type === 'meeting') qText = "When can we schedule a meeting?";
+if(type === 'why') qText = "Why should we choose Indus Botanical?";
+
+body.innerHTML += `<div style="text-align:right; margin:10px 0;"><span style="background:#e0ebe0; padding:8px 12px; border-radius:10px; display:inline-block; color:#111;">${qText}</span></div>`;
+body.innerHTML += `<div id="typing" style="color:var(--primary); margin-bottom:10px;"><i>Thinking...</i></div>`;
+body.scrollTop = body.scrollHeight;
+
+setTimeout(() => {
+document.getElementById('typing').remove();
+let ans = "";
+
+if(type === 'meeting') ans = "Our export team is available for virtual meetings Monday to Friday, 9:00 AM - 6:00 PM (PKT). You can click the WhatsApp icon to schedule a Zoom or WhatsApp call directly with our directors.";
+if(type === 'why') ans = "We cut out the middlemen. We provide 100% organic, lab-certified Neem products straight from the farms. This ensures premium quality at unbeatable wholesale prices.";
+
+body.innerHTML += `<div style="background:#f4f4f4; padding:10px; border-radius:10px; margin-bottom:10px; border-left: 3px solid var(--primary);">${ans}</div>`;
+body.scrollTop = body.scrollHeight;
+}, 1000);
+}
+
+// Special function for USA Supply to answer sensibly
+function aiButtonUSA() {
+let body = document.getElementById('ai-body');
+body.innerHTML += `<div style="text-align:right; margin:10px 0;"><span style="background:#e0ebe0; padding:8px 12px; border-radius:10px; display:inline-block; color:#111;">Why do you supply to America?</span></div>`;
+body.innerHTML += `<div id="typing2" style="color:var(--primary); margin-bottom:10px;"><i>Analyzing market data...</i></div>`;
+body.scrollTop = body.scrollHeight;
+
+setTimeout(() => {
+document.getElementById('typing2').remove();
+
+// Professional and sensible answer focusing on Lab Tested
+let ans = "The American market has strict quality controls. Because our products are rigorously <b>Lab Tested</b> and verified for purity, we comfortably meet and exceed USA standards. America demands the best organic quality, and that is exactly what we export.";
+
+body.innerHTML += `<div style="background:#f4f4f4; padding:10px; border-radius:10px; margin-bottom:10px; border-left: 3px solid var(--gold);">${ans}</div>`;
+body.scrollTop = body.scrollHeight;
+}, 1200);
+}
+</script>
+</body>
+</html>
