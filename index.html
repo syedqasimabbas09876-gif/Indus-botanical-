@@ -27,16 +27,16 @@ body { min-width: 1200px; }
 .nav-links a { text-decoration: none; color: #444; font-weight: bold; transition: 0.3s; font-size: 1.1rem; }
 .nav-links a:hover { color: var(--primary); }
 
-/* Hero Section - Pixel Fix */
+/* Hero Section - CRYSTAL CLEAR FIX */
 .hero {
 width: 100%;
-height: 70vh;
-background: url('https://i.ibb.co/ZRb3kzFG/a-photorealistic-wide-angle-cinematic-ph-kd-Kz-PCe-QRAexm0cj-m78e-Q-b-Zc-EVBGZSQCa-ETYNul2u-YA-sd.jpg') no-repeat center center;
-background-size: contain; /* Changed to contain to prevent pixelation/stretching */
-background-color: #f4f4f4;
-display: flex;
-align-items: center;
-justify-content: center;
+max-width: 100%;
+margin: 0 auto;
+aspect-ratio: 16 / 7; /* Adjusts automatically to image shape */
+background: url('https://i.ibb.co/6cSrk0Ty/Your-paragraph-text-20260423-225950-0000.jpg') no-repeat center center;
+background-size: cover; /* Ensures no stretching, only filling */
+image-rendering: -webkit-optimize-contrast;
+image-rendering: high-quality;
 }
 
 .container { padding: 50px 5%; max-width: 1300px; margin: 0 auto; }
@@ -51,7 +51,7 @@ justify-content: center;
 
 .buy-btn { display: block; background: var(--primary); color: white; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; width: 100%; cursor: pointer; border: none; font-size: 1.1rem; }
 
-/* Form Update */
+/* Form Section */
 .form-section { background: var(--light); padding: 80px 5%; }
 .form-container { max-width: 850px; margin: 0 auto; background: white; padding: 45px; border-radius: 25px; box-shadow: 0 15px 45px rgba(0,0,0,0.1); }
 .input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
@@ -185,7 +185,7 @@ footer { background: #111; color: white; padding: 50px 5%; text-align: center; b
 </div>
 
 <div id="ai-window">
-<div class="ai-header"><span>Indus Assistant</span><span onclick="toggleAI()" style="cursor:pointer;">&times;</span></div>
+<div class="ai-header"><span>Indus Assistant</span><span onclick="toggleAI()" style="cursor:pointer; font-size: 24px;">&times;</span></div>
 <div id="ai-body" class="ai-chat-body">
 <div class="msg" style="background:#e0ebe0; padding:10px; border-radius:10px; margin-bottom:10px;">Hello! Click a question below or type your message.</div>
 <button class="ai-question-btn" onclick="aiReply('sample')">1. Can I get the sample?</button>
